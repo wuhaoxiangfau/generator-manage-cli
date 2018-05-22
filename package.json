@@ -1,6 +1,6 @@
 {
-  "name": "generator-managecli",
-  "version": "0.1.3",
+  "name": "generator-manage-cli",
+  "version": "1.0.0",
   "description": "Cool cli for vue manage webApp",
   "homepage": "",
   "author": {
