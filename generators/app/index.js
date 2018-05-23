@@ -194,7 +194,7 @@ module.exports = class extends Generator {
       this.templatePath('src/components/frame/myTreeList.vue'),
       'src/components/frame/myTreeList.vue'
     );
-    //src内components/basic目录
+    //src内components/basic目录 基本功能组件
     this.fs.copy(
       this.templatePath('src/components/basic/myAsideMenu.vue'),
       'src/components/basic/myAsideMenu.vue'
@@ -251,6 +251,19 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('src/router/index.js'),
       'src/router/index.js'
+    );
+    //src 内store目录 全局状态机
+    this.fs.copy(
+      this.templatePath('src/store/index.js'),
+      'src/store/index.js'
+    );
+    this.fs.copy(
+      this.templatePath('src/store/menu.js'),
+      'src/store/menu.js'
+    );
+    this.fs.copy(
+      this.templatePath('src/store/user.js'),
+      'src/store/user.js'
     );
     //config目录
     this.fs.copy(
