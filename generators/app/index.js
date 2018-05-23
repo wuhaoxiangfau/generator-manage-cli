@@ -62,14 +62,14 @@ module.exports = class extends Generator {
 
   writing() {
     //创建readme
-    var readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
+    let readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
     this.fs.write(this.destinationPath('README.md'), readmeTpl({
       generatorName: 'generator-managecli',
       yoName: 'managecli'
     }));
 
     //创建packageJson
-    var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'),{});
+    let pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'),{});
     extend(pkg,{
       dependencies:{
         "babel-polyfill": "^6.26.0",
@@ -120,7 +120,7 @@ module.exports = class extends Generator {
     });
 
     pkg.keywords = pkg.keywords || [];
-    pkg.keywords.push('generator-managecli');
+    pkg.keywords.push('generator-manage-cli');
 
     pkg.name = this.props.projectName;
     pkg.description = this.props.description;
@@ -159,6 +159,14 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('index_tmpl.html'),
       this.destinationPath('index.html')
+    );
+    this.fs.copy(
+      this.templatePath('editorconfig_tmpl'),
+      this.destinationPath('.editorconfig')
+    );
+    this.fs.copy(
+      this.templatePath('.postcssrc_tmpl.js'),
+      this.destinationPath('.postcssrc.js')
     );
     //src目录
     this.fs.copy(
@@ -294,6 +302,11 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('config/prod.env.js'),
       'config/prod.env.js'
+    );
+    //static目录
+    this.fs.copy(
+      this.templatePath('static/config.js'),
+      'static/config.js'
     );
   }
 
