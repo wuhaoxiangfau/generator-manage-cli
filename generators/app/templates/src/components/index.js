@@ -13,8 +13,6 @@ let componentMap= {
   myAsideMenu:'basic/myAsideMenu.vue',
   // 下弹出框
   myDropDown:'basic/myDropDown.vue',
-  // 提交表单
-  myForm:'frame/myForm.vue',
   // 页码展示
   myPage:'frame/myPage.vue',
   //搜索区

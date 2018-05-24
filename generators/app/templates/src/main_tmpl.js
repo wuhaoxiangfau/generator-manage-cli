@@ -10,7 +10,14 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'font-awesome/css/font-awesome.css';
 
 import App from './App.vue'
+//路由
 import router from './router'
+//全局状态机
+import store from './store'
+//工具
+import './tool'
+//组件
+import './components'
 
 Vue.use(ElementUI);
 
@@ -20,6 +27,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });

@@ -179,10 +179,6 @@ module.exports = class extends Generator {
     );
     //src内components/frame目录
     this.fs.copy(
-      this.templatePath('src/components/frame/myForm.vue'),
-      'src/components/frame/myForm.vue'
-    );
-    this.fs.copy(
       this.templatePath('src/components/frame/myPage.vue'),
       'src/components/frame/myPage.vue'
     );
@@ -202,6 +198,11 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('src/components/basic/myDropDown.vue'),
       'src/components/basic/myDropDown.vue'
+    );
+    //src内 components加载文件
+    this.fs.copy(
+      this.templatePath('src/components/index.js'),
+      'src/components/index.js'
     );
     //src内pages/basic目录  基本业务页面
     this.fs.copy(
